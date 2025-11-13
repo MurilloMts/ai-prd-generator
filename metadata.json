@@ -1,0 +1,5 @@
+
+{
+  "name": "AI PRD Generator",
+  "description": "An intelligent application that transforms raw user notes into well-structured Product Requirement Documents (PRDs). It provides previews in Markdown, HTML, and PDF formats, and allows users to download or save their generated documents for future reference."
+}
