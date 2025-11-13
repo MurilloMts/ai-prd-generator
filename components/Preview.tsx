@@ -400,23 +400,25 @@ const Preview: React.FC<PreviewProps> = ({ prd, isLoading, isEnhancing, error, o
   return (
     <div className="bg-base-200 rounded-lg shadow-lg h-full flex flex-col">
       <div className="p-4 border-b border-base-300">
-        <div className="flex justify-between items-center mb-3">
-          <h2 className="text-2xl font-bold text-content-100">{prd.title}</h2>
-          <div className="flex items-center gap-2">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-3">
+          <h2 className="text-xl sm:text-2xl font-bold text-content-100 break-words">{prd.title}</h2>
+          <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
               <button 
                 onClick={() => setShowTagInput(!showTagInput)} 
-                className={`px-3 py-2 text-sm rounded-md hover:bg-base-300 transition-colors ${showTagInput ? 'bg-brand-primary text-white' : ''}`}
+                className={`px-2 sm:px-3 py-2 text-xs sm:text-sm rounded-md hover:bg-base-300 transition-colors ${showTagInput ? 'bg-brand-primary text-white' : ''}`}
                 title="Gerenciar Tags"
               >
-                🏷️ Tags
+                <span className="hidden sm:inline">🏷️ Tags</span>
+                <span className="sm:hidden">🏷️</span>
               </button>
               <button 
                 onClick={() => setIsEditing(!isEditing)} 
-                className={`px-3 py-2 text-sm rounded-md hover:bg-base-300 transition-colors disabled:opacity-50 ${isEditing ? 'bg-brand-primary text-white' : ''}`}
+                className={`px-2 sm:px-3 py-2 text-xs sm:text-sm rounded-md hover:bg-base-300 transition-colors disabled:opacity-50 ${isEditing ? 'bg-brand-primary text-white' : ''}`}
                 title="Editar PRD" 
                 disabled={!prd}
               >
-                ✏️ Editar
+                <span className="hidden sm:inline">✏️ Editar</span>
+                <span className="sm:hidden">✏️</span>
               </button>
               <button onClick={handleDownloadMd} className="p-2 rounded-md hover:bg-base-300 transition-colors disabled:opacity-50" title="Baixar Markdown" disabled={!prd}><DownloadIcon/></button>
               <button onClick={handleDownloadPdf} className="p-2 rounded-md hover:bg-base-300 transition-colors disabled:opacity-50" title="Baixar PDF" disabled={!isFullyLoaded}><DownloadIcon/></button>
@@ -442,10 +444,19 @@ const Preview: React.FC<PreviewProps> = ({ prd, isLoading, isEnhancing, error, o
       </div>
 
       <div className="border-b border-base-300 px-4">
-        <div className="flex -mb-px">
-          <button className={getTabClass('preview')} onClick={() => setActiveTab('preview')}>Visualização</button>
-          <button className={getTabClass('markdown')} onClick={() => setActiveTab('markdown')}>Markdown</button>
-          <button className={getTabClass('html')} onClick={() => setActiveTab('html')} disabled={!prd.prd_html}>HTML</button>
+        <div className="flex -mb-px overflow-x-auto">
+          <button className={getTabClass('preview')} onClick={() => setActiveTab('preview')}>
+            <span className="hidden sm:inline">Visualização</span>
+            <span className="sm:hidden">👁️</span>
+          </button>
+          <button className={getTabClass('markdown')} onClick={() => setActiveTab('markdown')}>
+            <span className="hidden sm:inline">Markdown</span>
+            <span className="sm:hidden">📝</span>
+          </button>
+          <button className={getTabClass('html')} onClick={() => setActiveTab('html')} disabled={!prd.prd_html}>
+            <span className="hidden sm:inline">HTML</span>
+            <span className="sm:hidden">🌐</span>
+          </button>
         </div>
       </div>
 

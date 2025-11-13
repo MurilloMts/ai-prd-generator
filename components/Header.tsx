@@ -28,24 +28,27 @@ const Header: React.FC = () => {
                             </div>
                             {/* Nome */}
                             <div className="flex flex-col">
-                                <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
+                                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
                                     PRD-Gen
                                 </span>
-                                <span className="text-[10px] text-content-200 -mt-1 tracking-wider uppercase">
+                                <span className="hidden sm:block text-[10px] text-content-200 -mt-1 tracking-wider uppercase">
                                     Enterprise Edition
                                 </span>
                             </div>
                         </Link>
                     </div>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-2 sm:space-x-4">
                         <Link to="/" className={getLinkClass('/')}>
-                            Gerador
+                            <span className="hidden sm:inline">Gerador</span>
+                            <span className="sm:hidden">📝</span>
                         </Link>
                         <Link to="/dashboard" className={getLinkClass('/dashboard')}>
-                            Dashboard
+                            <span className="hidden sm:inline">Dashboard</span>
+                            <span className="sm:hidden">📊</span>
                         </Link>
                         <Link to="/history" className={getLinkClass('/history')}>
-                            Histórico
+                            <span className="hidden sm:inline">Histórico</span>
+                            <span className="sm:hidden">📚</span>
                         </Link>
                     </div>
                 </div>
