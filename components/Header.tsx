@@ -19,19 +19,16 @@ const Header: React.FC = () => {
                         <Link to="/" className="flex items-center gap-3 group">
                             {/* Logo */}
                             <div className="relative">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-200 group-hover:scale-105">
-                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                    </svg>
-                                </div>
+                                                <img 
+                                    src="/logo.png" 
+                                    alt="PRD Logo" 
+                                    className="w-10 h-10 rounded-lg shadow-lg group-hover:shadow-xl transition-all duration-200 group-hover:scale-105"
+                                />
                                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-base-200 animate-pulse"></div>
                             </div>
                             {/* Nome */}
-                            <div className="flex flex-col">
-                                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent tracking-tight">
-                                    PRD-Gen
-                                </span>
-                                <span className="hidden sm:block text-[10px] text-content-200 -mt-1 tracking-wider uppercase">
+                            <div className="flex items-center">
+                                <span className="text-sm sm:text-base font-semibold text-content-200 tracking-wider uppercase">
                                     Enterprise Edition
                                 </span>
                             </div>

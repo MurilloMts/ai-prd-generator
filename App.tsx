@@ -5,10 +5,14 @@ import HomePage from './pages/HomePage';
 import HistoryPage from './pages/HistoryPage';
 import DashboardPage from './pages/DashboardPage';
 import Header from './components/Header';
+import PWAUpdateNotification from './components/PWAUpdateNotification';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
+      <PWAUpdateNotification />
+      <PWAInstallPrompt />
       <div className="h-screen flex flex-col">
         <Header />
         <main className="flex-1 container mx-auto p-4 md:p-6 overflow-y-auto">
@@ -26,16 +30,16 @@ const App: React.FC = () => {
             <p>
               Powered by:{' '}
               <a 
-                href="https://www.instagram.com/web_solucoesdigitais/" 
+                href="https://webdigital.app" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-brand-secondary hover:text-blue-400 transition-colors underline font-semibold"
               >
-                Web Soluções Digitais
+                Web Digital
               </a>
             </p>
             <p className="text-xs text-gray-500 mt-2">
-              Versão: v1.1.0
+              Versão: v1.3.0
             </p>
           </div>
         </footer>
