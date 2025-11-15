@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import HistoryPage from './pages/HistoryPage';
 import DashboardPage from './pages/DashboardPage';
@@ -8,7 +8,7 @@ import Header from './components/Header';
 
 const App: React.FC = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow container mx-auto p-4 md:p-6">
@@ -40,7 +40,7 @@ const App: React.FC = () => {
           </div>
         </footer>
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

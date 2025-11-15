@@ -152,7 +152,7 @@ ${guidedFormData.references ? `**Referências Adicionais:**\n${guidedFormData.re
         </div>
 
         {/* Conteúdo baseado no modo */}
-        <div className="flex-grow overflow-y-auto mb-4">
+        <div className={`flex-grow mb-4 ${mode === 'guided' ? 'overflow-y-auto' : ''}`}>
           {mode === 'free' ? (
             <textarea
               value={notes}
