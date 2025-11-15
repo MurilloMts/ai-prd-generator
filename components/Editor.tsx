@@ -103,10 +103,10 @@ ${guidedFormData.references ? `**Referências Adicionais:**\n${guidedFormData.re
 
   return (
     <>
-      <div className="bg-base-200 p-4 rounded-lg shadow-lg h-full flex flex-col">
+      <div className="bg-base-200 p-3 md:p-4 rounded-lg shadow-lg h-full flex flex-col">
         {/* Header com seletor de modo */}
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold text-content-100">Criar PRD</h2>
+        <div className="flex justify-between items-center mb-3">
+          <h2 className="text-lg md:text-xl font-bold text-content-100">Criar PRD</h2>
           {mode === 'free' && (
             <button
               onClick={() => setShowTemplates(true)}
@@ -119,7 +119,7 @@ ${guidedFormData.references ? `**Referências Adicionais:**\n${guidedFormData.re
         </div>
 
         {/* Seletor de Modo */}
-        <div className="mb-4">
+        <div className="mb-3">
           <div className="flex gap-2 bg-base-300 p-1 rounded-lg">
             <button
               onClick={() => handleModeChange('free')}
@@ -152,13 +152,13 @@ ${guidedFormData.references ? `**Referências Adicionais:**\n${guidedFormData.re
         </div>
 
         {/* Conteúdo baseado no modo */}
-        <div className={`flex-grow mb-4 ${mode === 'guided' ? 'overflow-y-auto' : ''}`}>
+        <div className={`flex-grow mb-3 ${mode === 'guided' ? 'overflow-y-auto' : ''}`}>
           {mode === 'free' ? (
             <textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="Ex: Precisamos de um novo recurso para nosso app. Os usuários devem poder criar um perfil, enviar uma foto e adicionar uma biografia. Deve ser simples e rápido..."
-              className="w-full h-full bg-base-300 text-content-200 p-3 rounded-md focus:ring-2 focus:ring-brand-secondary focus:outline-none resize-none"
+              className="w-full h-full min-h-[300px] md:min-h-0 bg-base-300 text-content-200 p-3 rounded-md focus:ring-2 focus:ring-brand-secondary focus:outline-none resize-none text-sm md:text-base"
               disabled={isLoading}
             />
           ) : (

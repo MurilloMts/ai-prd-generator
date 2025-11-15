@@ -57,22 +57,19 @@ const HomePage: React.FC = () => {
   }, [prd]);
 
   return (
-    <>
-      <div className="flex flex-col lg:flex-row gap-6 h-full">
-        <div className="lg:w-1/3 flex-shrink-0">
-          <Editor
-            notes={notes}
-            setNotes={setNotes}
-            onGenerate={handleGenerate}
-            isLoading={isLoading}
-          />
-        </div>
-        <div className="lg:w-2/3 flex-grow">
-          <Preview prd={prd} isLoading={isLoading} isEnhancing={isEnhancing} error={error} onEdit={handleEdit} />
-        </div>
+    <div className="flex flex-col lg:flex-row gap-4 md:gap-6 h-full">
+      <div className="lg:w-1/3 flex-shrink-0 h-full">
+        <Editor
+          notes={notes}
+          setNotes={setNotes}
+          onGenerate={handleGenerate}
+          isLoading={isLoading}
+        />
       </div>
-
-    </>
+      <div className="lg:w-2/3 flex-grow h-full">
+        <Preview prd={prd} isLoading={isLoading} isEnhancing={isEnhancing} error={error} onEdit={handleEdit} />
+      </div>
+    </div>
   );
 };
 

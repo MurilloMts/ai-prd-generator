@@ -9,16 +9,16 @@ import Header from './components/Header';
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
+      <div className="h-screen flex flex-col">
         <Header />
-        <main className="flex-grow container mx-auto p-4 md:p-6">
+        <main className="flex-1 container mx-auto p-4 md:p-6 overflow-y-auto">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/history" element={<HistoryPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
         </main>
-        <footer className="text-center p-6 text-sm text-gray-400 border-t border-base-300 bg-base-200">
+        <footer className="text-center p-4 md:p-6 text-sm text-gray-400 border-t border-base-300 bg-base-200 flex-shrink-0">
           <div className="space-y-2">
             <p className="font-semibold text-content-100">
               Desenvolvedor: <span className="text-brand-secondary">Murillo Matos</span>
